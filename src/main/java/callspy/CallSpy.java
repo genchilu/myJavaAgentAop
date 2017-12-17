@@ -32,7 +32,7 @@ public class CallSpy implements ClassFileTransformer {
     //region filter out non-application classes
     // Application filter. Can be externalized into a property file.
     // For instance, profilers use blacklist/whitelist to configure this kind of filters
-    if (!className.startsWith("genchi")) {
+    if (!className.startsWith("com/zt")) {
       return classfileBuffer;
     }
     //endregion

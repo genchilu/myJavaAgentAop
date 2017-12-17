@@ -39,7 +39,7 @@
                     <archive>
 
                         <manifest>
-                            <mainClass>callspy.Main</mainClass>
+                            <mainClass>url.genchi.spring.SampleController</mainClass>
                         </manifest>
                         <manifestEntries>
                             <Premain-Class>callspy.Agent</Premain-Class>
@@ -55,6 +55,18 @@
                         <phase>package</phase> <!-- bind to the packaging phase -->
                         <goals>
                             <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.9.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
