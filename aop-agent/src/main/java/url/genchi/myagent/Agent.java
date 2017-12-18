@@ -1,12 +1,11 @@
-package callspy;
+package url.genchi.myagent;
 
 import java.lang.instrument.Instrumentation;
 
 public class Agent {
 
   public static void premain(String args, Instrumentation instrumentation){
-    System.out.println("in agent!!!!!!!!!!!!!!");
-    CallSpy transformer = new CallSpy();
+    MyTransformer transformer = new MyTransformer();
     instrumentation.addTransformer(transformer);
   }
 }

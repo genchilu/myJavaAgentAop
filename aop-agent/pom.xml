@@ -4,15 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
-    </parent>
-
-
     <groupId>url.genchi</groupId>
-    <artifactId>myJavaAgentApo</artifactId>
+    <artifactId>aop-agent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -25,24 +18,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.5.9.RELEASE</version>
         </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
-                <!-- NOTE: We don't need a groupId specification because the group is
-                     org.apache.maven.plugins ...which is assumed by default.
-                 -->
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
                     <archive>
-
-                        <manifest>
-                            <mainClass>url.genchi.spring.SampleController</mainClass>
-                        </manifest>
                         <manifestEntries>
-                            <Premain-Class>callspy.Agent</Premain-Class>
+                            <Premain-Class>url.genchi.myagent.Agent</Premain-Class>
                         </manifestEntries>
                     </archive>
                     <descriptorRefs>
@@ -55,18 +42,6 @@
                         <phase>package</phase> <!-- bind to the packaging phase -->
                         <goals>
                             <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.9.RELEASE</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>

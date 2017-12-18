@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleController {
 
     @RequestMapping("/")
-    String home() {
+    String hello() throws InterruptedException {
+        Thread.sleep(100);
         return "Hello World!";
     }
 
