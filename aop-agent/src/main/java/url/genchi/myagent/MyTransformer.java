@@ -35,10 +35,10 @@ public class MyTransformer implements ClassFileTransformer {
       CtMethod[] declaredMethods = ct.getDeclaredMethods();
       for (CtMethod method : declaredMethods) {
           method.insertBefore(" { " +
-                  "url.genchi.myagent.ExecuteTimeMeasurer.setStartTime();" +
-                  "url.genchi.myagent.ExecuteTimeMeasurer.setSFunctionName(\"" + method.getName() +  "\");" +
+                  "ExecuteTimeMeasurer.setStartTime();" +
+                  "ExecuteTimeMeasurer.setSFunctionName(\"" + method.getName() +  "\");" +
                   "}");
-          method.insertAfter("{ url.genchi.myagent.ExecuteTimeMeasurer.printMeasureTime(); }", true);
+          method.insertAfter("{ ExecuteTimeMeasurer.printMeasureTime(); }", true);
       }
 
       return ct.toBytecode();

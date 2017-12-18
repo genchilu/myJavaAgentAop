@@ -12,7 +12,7 @@ mvn package
 ```
 # run
 ```
-java -javaagent:aop-agent/target/aop-agent-1.0-SNAPSHOT-jar-with-dependencies.jar -classpath aop-agent/target/aop-agent-1.0-SNAPSHOT-jar-with-dependencies.jar -jar springboot-example/target/springboot-example-1.0-SNAPSHOT.jar
+java -javaagent:aop-agent/target/aop-agent-1.0-jar-with-dependencies.jar -classpath aop-agent/target/aop-agent-1.0-jar-with-dependencies.jar -jar springboot-example/target/springboot-example-1.0.jar
 ```
 
 # test
